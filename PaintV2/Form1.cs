@@ -16,17 +16,18 @@ namespace PaintV2
         Color targetGlobal;
         int sizeGlobal = 5;
         ColorDialog colorDialog;
-        Bitmap bmpGlobal;
-        Graphics graphicsGlobal;
+        Bitmap bmpGlobal, bmpCopy;
+        Graphics graphicsGlobal, graphicsCopy;
         bool paintGlobal = false;
         Point px, py, locationXY, auxLocationXY, finalLocationXY;
-        Pen penGlobal;
-        Pen eraserGlobal;
+        Pen penGlobal, eraserGlobal;
         String tool;
         int x, y, sX, sY, cX, cY,counter;
         Font fontGlobal;
         SolidBrush brushGlobal;
         FontDialog fontDialog1;
+        Image imgCopy;
+
 
         public Form1()
         {
@@ -103,6 +104,10 @@ namespace PaintV2
                     brushGlobal = new SolidBrush(colorGlobal);
                     graphicsGlobal.DrawString(textBox_texto.Text, fontGlobal, brushGlobal, py);
                     break;
+                case "paste":
+                    imgCopy = bmpCopy;
+                    graphicsGlobal.DrawImage(imgCopy, py);
+                    break;
                 default:
 
                     break;
@@ -134,6 +139,11 @@ namespace PaintV2
                     int difX = x - cX;
                     graphicsGlobal.DrawLine(penGlobal, cX, cY, cX - difX, y);
                     graphicsGlobal.DrawLine(penGlobal, cX - difX, y, x, y);
+                    break;
+                case "copy":
+                    Rectangle rectCopy = new Rectangle(cX, cY, sX, sY);
+                    System.Drawing.Imaging.PixelFormat format = bmpGlobal.PixelFormat;
+                    bmpCopy = bmpGlobal.Clone(rectCopy, format);
                     break;
                 default:
                     break;
@@ -214,6 +224,10 @@ namespace PaintV2
                         int difX = x - cX;
                         preview.DrawLine(penGlobal, cX, cY, cX - difX, y);
                         preview.DrawLine(penGlobal, cX - difX, y, x, y);
+                        break;
+                    case "copy":
+                        Pen p = p = new Pen(Color.LightBlue, 1);
+                        preview.DrawRectangle(p, cX, cY, sX, sY);
                         break;
                     default:
                         break;
