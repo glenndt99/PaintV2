@@ -34,18 +34,16 @@ namespace PaintV2
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label_size_number = new System.Windows.Forms.Label();
-            this.label_size = new System.Windows.Forms.Label();
-            this.button_plus = new System.Windows.Forms.Button();
-            this.button_minus = new System.Windows.Forms.Button();
-            this.label_color = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_paste = new System.Windows.Forms.Button();
             this.button_copy = new System.Windows.Forms.Button();
             this.button_text = new System.Windows.Forms.Button();
             this.button_clear = new System.Windows.Forms.Button();
+            this.label_size_number = new System.Windows.Forms.Label();
+            this.label_size = new System.Windows.Forms.Label();
+            this.button_plus = new System.Windows.Forms.Button();
+            this.button_minus = new System.Windows.Forms.Button();
             this.pictureBox_color = new System.Windows.Forms.PictureBox();
+            this.label_color = new System.Windows.Forms.Label();
             this.button_eraser = new System.Windows.Forms.Button();
             this.button_fill = new System.Windows.Forms.Button();
             this.button_polygon = new System.Windows.Forms.Button();
@@ -54,10 +52,17 @@ namespace PaintV2
             this.button_rectangle = new System.Windows.Forms.Button();
             this.button_line = new System.Windows.Forms.Button();
             this.button_pencil = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button_textDialog = new System.Windows.Forms.Button();
+            this.textBox_texto = new System.Windows.Forms.TextBox();
+            this.label_text = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_color)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -119,80 +124,6 @@ namespace PaintV2
             this.panel1.Size = new System.Drawing.Size(139, 737);
             this.panel1.TabIndex = 1;
             // 
-            // label_size_number
-            // 
-            this.label_size_number.AutoSize = true;
-            this.label_size_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_size_number.Location = new System.Drawing.Point(56, 699);
-            this.label_size_number.Name = "label_size_number";
-            this.label_size_number.Size = new System.Drawing.Size(18, 20);
-            this.label_size_number.TabIndex = 13;
-            this.label_size_number.Text = "5";
-            // 
-            // label_size
-            // 
-            this.label_size.AutoSize = true;
-            this.label_size.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_size.Location = new System.Drawing.Point(38, 676);
-            this.label_size.Name = "label_size";
-            this.label_size.Size = new System.Drawing.Size(59, 16);
-            this.label_size.TabIndex = 12;
-            this.label_size.Text = "Tamaño";
-            // 
-            // button_plus
-            // 
-            this.button_plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_plus.Location = new System.Drawing.Point(90, 693);
-            this.button_plus.Name = "button_plus";
-            this.button_plus.Size = new System.Drawing.Size(32, 32);
-            this.button_plus.TabIndex = 11;
-            this.button_plus.Text = "+";
-            this.button_plus.UseVisualStyleBackColor = true;
-            this.button_plus.Click += new System.EventHandler(this.button_plus_Click);
-            // 
-            // button_minus
-            // 
-            this.button_minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_minus.Location = new System.Drawing.Point(9, 693);
-            this.button_minus.Name = "button_minus";
-            this.button_minus.Size = new System.Drawing.Size(32, 32);
-            this.button_minus.TabIndex = 10;
-            this.button_minus.Text = "-";
-            this.button_minus.UseVisualStyleBackColor = true;
-            this.button_minus.Click += new System.EventHandler(this.button_minus_Click);
-            // 
-            // label_color
-            // 
-            this.label_color.AutoSize = true;
-            this.label_color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_color.Location = new System.Drawing.Point(12, 637);
-            this.label_color.Name = "label_color";
-            this.label_color.Size = new System.Drawing.Size(40, 16);
-            this.label_color.TabIndex = 8;
-            this.label_color.Text = "Color";
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(139, 661);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1045, 100);
-            this.panel2.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(139, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1045, 637);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
-            // 
             // button_paste
             // 
             this.button_paste.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -249,6 +180,48 @@ namespace PaintV2
             this.button_clear.UseVisualStyleBackColor = true;
             this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
             // 
+            // label_size_number
+            // 
+            this.label_size_number.AutoSize = true;
+            this.label_size_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_size_number.Location = new System.Drawing.Point(56, 699);
+            this.label_size_number.Name = "label_size_number";
+            this.label_size_number.Size = new System.Drawing.Size(18, 20);
+            this.label_size_number.TabIndex = 13;
+            this.label_size_number.Text = "5";
+            // 
+            // label_size
+            // 
+            this.label_size.AutoSize = true;
+            this.label_size.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_size.Location = new System.Drawing.Point(38, 676);
+            this.label_size.Name = "label_size";
+            this.label_size.Size = new System.Drawing.Size(59, 16);
+            this.label_size.TabIndex = 12;
+            this.label_size.Text = "Tamaño";
+            // 
+            // button_plus
+            // 
+            this.button_plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_plus.Location = new System.Drawing.Point(90, 693);
+            this.button_plus.Name = "button_plus";
+            this.button_plus.Size = new System.Drawing.Size(32, 32);
+            this.button_plus.TabIndex = 11;
+            this.button_plus.Text = "+";
+            this.button_plus.UseVisualStyleBackColor = true;
+            this.button_plus.Click += new System.EventHandler(this.button_plus_Click);
+            // 
+            // button_minus
+            // 
+            this.button_minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_minus.Location = new System.Drawing.Point(9, 693);
+            this.button_minus.Name = "button_minus";
+            this.button_minus.Size = new System.Drawing.Size(32, 32);
+            this.button_minus.TabIndex = 10;
+            this.button_minus.Text = "-";
+            this.button_minus.UseVisualStyleBackColor = true;
+            this.button_minus.Click += new System.EventHandler(this.button_minus_Click);
+            // 
             // pictureBox_color
             // 
             this.pictureBox_color.BackColor = System.Drawing.Color.Black;
@@ -260,6 +233,16 @@ namespace PaintV2
             this.pictureBox_color.TabIndex = 9;
             this.pictureBox_color.TabStop = false;
             this.pictureBox_color.Click += new System.EventHandler(this.pictureBox_color_Click);
+            // 
+            // label_color
+            // 
+            this.label_color.AutoSize = true;
+            this.label_color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_color.Location = new System.Drawing.Point(12, 637);
+            this.label_color.Name = "label_color";
+            this.label_color.Size = new System.Drawing.Size(40, 16);
+            this.label_color.TabIndex = 8;
+            this.label_color.Text = "Color";
             // 
             // button_eraser
             // 
@@ -373,6 +356,70 @@ namespace PaintV2
             this.button_pencil.UseVisualStyleBackColor = true;
             this.button_pencil.Click += new System.EventHandler(this.button_pencil_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.button_textDialog);
+            this.panel2.Controls.Add(this.textBox_texto);
+            this.panel2.Controls.Add(this.label_text);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(139, 661);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1045, 100);
+            this.panel2.TabIndex = 2;
+            // 
+            // button_textDialog
+            // 
+            this.button_textDialog.Location = new System.Drawing.Point(22, 67);
+            this.button_textDialog.Name = "button_textDialog";
+            this.button_textDialog.Size = new System.Drawing.Size(75, 23);
+            this.button_textDialog.TabIndex = 7;
+            this.button_textDialog.Text = "Apariencia";
+            this.button_textDialog.UseVisualStyleBackColor = true;
+            this.button_textDialog.Click += new System.EventHandler(this.button_textDialog_Click);
+            // 
+            // textBox_texto
+            // 
+            this.textBox_texto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_texto.Location = new System.Drawing.Point(22, 39);
+            this.textBox_texto.Name = "textBox_texto";
+            this.textBox_texto.Size = new System.Drawing.Size(249, 22);
+            this.textBox_texto.TabIndex = 6;
+            // 
+            // label_text
+            // 
+            this.label_text.AutoSize = true;
+            this.label_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_text.Location = new System.Drawing.Point(19, 16);
+            this.label_text.Name = "label_text";
+            this.label_text.Size = new System.Drawing.Size(42, 16);
+            this.label_text.TabIndex = 1;
+            this.label_text.Text = "Texto";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(139, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1045, 637);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(196, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Borrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,8 +436,10 @@ namespace PaintV2
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_color)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,6 +472,10 @@ namespace PaintV2
         private System.Windows.Forms.Button button_text;
         private System.Windows.Forms.Button button_paste;
         private System.Windows.Forms.Button button_copy;
+        private System.Windows.Forms.TextBox textBox_texto;
+        private System.Windows.Forms.Label label_text;
+        private System.Windows.Forms.Button button_textDialog;
+        private System.Windows.Forms.Button button1;
     }
 }
 

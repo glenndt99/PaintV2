@@ -24,17 +24,23 @@ namespace PaintV2
         Pen eraserGlobal;
         String tool;
         int x, y, sX, sY, cX, cY,counter;
+        Font fontGlobal;
+        SolidBrush brushGlobal;
+        FontDialog fontDialog1;
 
         public Form1()
         {
             InitializeComponent();
-            //colorGlobal.ToArgb();
             penGlobal = new Pen(colorGlobal, sizeGlobal);
             eraserGlobal = new Pen(Color.White, sizeGlobal*3);
             tool = "pencil";
             colorDialog = new ColorDialog();
             this.Width = 1200;
             this.Height = 800;
+
+            fontGlobal = SystemFonts.DefaultFont;
+            fontDialog1 = new FontDialog();
+            brushGlobal = new SolidBrush(colorGlobal);
 
             bmpGlobal = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             graphicsGlobal = Graphics.FromImage(bmpGlobal);
@@ -92,6 +98,10 @@ namespace PaintV2
                     targetGlobal = bmpGlobal.GetPixel(cX,cY);
                     colorGlobal.ToArgb();
                     FloodFill(bmpGlobal, py, targetGlobal, colorGlobal);
+                    break;
+                case "text":
+                    brushGlobal = new SolidBrush(colorGlobal);
+                    graphicsGlobal.DrawString(textBox_texto.Text, fontGlobal, brushGlobal, py);
                     break;
                 default:
 
@@ -229,6 +239,23 @@ namespace PaintV2
             tool = "copy";
         }
 
+        private void button_textDialog_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowColor = true;            
+
+            if (fontDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                fontGlobal = fontDialog1.Font;
+                colorGlobal = fontDialog1.Color;
+                pictureBox_color.BackColor = fontDialog1.Color;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox_texto.Text = "";
+        }
+
         private void button_paste_Click(object sender, EventArgs e)
         {
             tool = "paste";
@@ -262,14 +289,6 @@ namespace PaintV2
             label_size_number.Text = sizeGlobal.ToString();
         }
 
-        private void Form1_ClientSizeChanged(object sender, EventArgs e)
-        {
-            pictureBox1.ClientSize = this.ClientSize;
-            bmpGlobal = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            graphicsGlobal = Graphics.FromImage(bmpGlobal);
-            
-        }
-
         private void button_eraser_Click(object sender, EventArgs e)
         {
             tool = "eraser";
@@ -285,9 +304,10 @@ namespace PaintV2
             {
                 Image image1 = Image.FromFile(open.FileName);
                 graphicsGlobal.DrawImage(image1, 0, 0);
-                pictureBox1.Refresh();
+                
 
             }
+            pictureBox1.Refresh();
         }
 
         private void drawPolygon(object sender, EventArgs e)
